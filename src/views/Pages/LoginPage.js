@@ -6,9 +6,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
-import Face from "@material-ui/icons/Face";
 import Email from "@material-ui/icons/Email";
-// import LockOutline from "@material-ui/icons/LockOutline";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";

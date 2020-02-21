@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
-import Footer from "components/Footer/Footer.js";
 
 import routes from "routes.js";
 
@@ -84,8 +83,7 @@ export default function Pages(props) {
   };
   return (
     <div>
-      <AuthNavbar
-      brandText={getActiveRoute(routes)} {...rest} />
+      <AuthNavbar brandText={getActiveRoute(routes)} {...rest} />
       <div className={classes.wrapper} ref={wrapper}>
         <div
           className={classes.fullPage}

@@ -170,7 +170,7 @@ const sidebarStyle = theme => ({
     verticalAlign: "middle",
     border: "0",
     position: "relative",
-    top: "-16px",
+    top: "-16px"
   },
   background: {
     position: "absolute",

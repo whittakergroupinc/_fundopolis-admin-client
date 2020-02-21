@@ -33,8 +33,6 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 export default function ReactTables() {
-
-
   const [data, setData] = React.useState(
     dataTable.dataRows.map((prop, key) => {
       return {

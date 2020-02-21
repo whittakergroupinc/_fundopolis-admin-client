@@ -7,15 +7,13 @@ import { VectorMap } from "react-jvectormap";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
-// import ContentCopy from "@material-ui/icons/ContentCopy";
-import Store from "@material-ui/icons/Store";
-// import InfoOutline from "@material-ui/icons/InfoOutline";
+import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+import BusinessIcon from "@material-ui/icons/Business";
 import Warning from "@material-ui/icons/Warning";
+import CheckIcon from "@material-ui/icons/Check";
 import DateRange from "@material-ui/icons/DateRange";
-import LocalOffer from "@material-ui/icons/LocalOffer";
 import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
@@ -24,6 +22,7 @@ import Edit from "@material-ui/icons/Edit";
 import Place from "@material-ui/icons/Place";
 import ArtTrack from "@material-ui/icons/ArtTrack";
 import Language from "@material-ui/icons/Language";
+import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
@@ -31,6 +30,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Table from "components/Table/Table.js";
 import Button from "components/CustomButtons/Button.js";
 import Danger from "components/Typography/Danger.js";
+import Success from "components/Typography/Success.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
@@ -79,34 +79,11 @@ export default function Dashboard() {
       <GridContainer>
         <GridItem xs={12} sm={6} md={6} lg={3}>
           <Card>
-            <CardHeader color="warning" stats icon>
-              <CardIcon color="warning">
-                <Icon>content_copy</Icon>
-              </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
-              <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
-              </h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Get more space
-                </a>
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={6} lg={3}>
-          <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-                <Store />
+                <TrendingUpIcon />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
+              <p className={classes.cardCategory}>Total Raised to Date</p>
               <h3 className={classes.cardTitle}>$34,245</h3>
             </CardHeader>
             <CardFooter stats>
@@ -119,17 +96,40 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={6} md={6} lg={3}>
           <Card>
+            <CardHeader color="warning" stats icon>
+              <CardIcon color="warning">
+                <BusinessIcon />
+              </CardIcon>
+              <p className={classes.cardCategory}>Comapnies</p>
+              <h3 className={classes.cardTitle}>50</h3>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <Danger>
+                  <Warning />
+                </Danger>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  Below expecataions
+                </a>
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={6} lg={3}>
+          <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
-                <Icon>info_outline</Icon>
+                <AccountBalanceIcon />
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
+              <p className={classes.cardCategory}>Investors</p>
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <LocalOffer />
-                Tracked from Github
+                <Success>
+                  <CheckIcon />
+                </Success>
+                On track
               </div>
             </CardFooter>
           </Card>
@@ -140,7 +140,7 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <i className="fab fa-twitter" />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
+              <p className={classes.cardCategory}>Fundee Followers</p>
               <h3 className={classes.cardTitle}>+245</h3>
             </CardHeader>
             <CardFooter stats>
@@ -149,96 +149,6 @@ export default function Dashboard() {
                 Just Updated
               </div>
             </CardFooter>
-          </Card>
-        </GridItem>
-      </GridContainer>
-      <GridContainer>
-        <GridItem xs={12}>
-          <Card>
-            <CardHeader color="success" icon>
-              <CardIcon color="success">
-                <Language />
-              </CardIcon>
-              <h4 className={classes.cardIconTitle}>
-                Global Sales by Top Locations
-              </h4>
-            </CardHeader>
-            <CardBody>
-              <GridContainer justify="space-between">
-                <GridItem xs={12} sm={12} md={5}>
-                  <Table
-                    tableData={[
-                      [
-                        <img src={us_flag} alt="us_flag" key={"flag"} />,
-                        "USA",
-                        "2.920",
-                        "53.23%"
-                      ],
-                      [
-                        <img src={de_flag} alt="us_flag" key={"flag"} />,
-                        "Germany",
-                        "1.300",
-                        "20.43%"
-                      ],
-                      [
-                        <img src={au_flag} alt="us_flag" key={"flag"} />,
-                        "Australia",
-                        "760",
-                        "10.35%"
-                      ],
-                      [
-                        <img src={gb_flag} alt="us_flag" key={"flag"} />,
-                        "United Kingdom",
-                        "690",
-                        "7.87%"
-                      ],
-                      [
-                        <img src={ro_flag} alt="us_flag" key={"flag"} />,
-                        "Romania",
-                        "600",
-                        "5.94%"
-                      ],
-                      [
-                        <img src={br_flag} alt="us_flag" key={"flag"} />,
-                        "Brasil",
-                        "550",
-                        "4.34%"
-                      ]
-                    ]}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <VectorMap
-                    map={"world_mill"}
-                    backgroundColor="transparent"
-                    zoomOnScroll={false}
-                    containerStyle={{
-                      width: "100%",
-                      height: "280px"
-                    }}
-                    containerClassName="map"
-                    regionStyle={{
-                      initial: {
-                        fill: "#e4e4e4",
-                        "fill-opacity": 0.9,
-                        stroke: "none",
-                        "stroke-width": 0,
-                        "stroke-opacity": 0
-                      }
-                    }}
-                    series={{
-                      regions: [
-                        {
-                          values: mapData,
-                          scale: ["#AAAAAA", "#444444"],
-                          normalizeFunction: "polynomial"
-                        }
-                      ]
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-            </CardBody>
           </Card>
         </GridItem>
       </GridContainer>
@@ -277,7 +187,7 @@ export default function Dashboard() {
                   </Button>
                 </Tooltip>
               </div>
-              <h4 className={classes.cardTitle}>Daily Sales</h4>
+              <h4 className={classes.cardTitle}>Daily Investment</h4>
               <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory} /> 55%
@@ -382,7 +292,7 @@ export default function Dashboard() {
           </Card>
         </GridItem>
       </GridContainer>
-      <h3>Manage Listings</h3>
+      <h3>Top Performing Companies by Investment Raised</h3>
       <br />
       <GridContainer>
         <GridItem xs={12} sm={12} md={4}>
@@ -427,9 +337,14 @@ export default function Dashboard() {
               </div>
               <h4 className={classes.cardProductTitle}>
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Cozy 5 Stars Apartment
+                  Company A
                 </a>
               </h4>
+              <h5 className={classes.cardProductTitle}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  Fundee 1
+                </a>
+              </h5>
               <p className={classes.cardProductDesciprion}>
                 The place is close to Barceloneta Beach and bus stop just 2 min
                 by walk and near to {'"'}Naviglio{'"'} where you can enjoy the
@@ -438,10 +353,10 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$899/night</h4>
+                <h4>$23M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
-                <Place /> Barcelona, Spain
+                <Place /> Boston, Massachusetts
               </div>
             </CardFooter>
           </Card>
@@ -488,9 +403,14 @@ export default function Dashboard() {
               </div>
               <h4 className={classes.cardProductTitle}>
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Office Studio
+                  Company B
                 </a>
               </h4>
+              <h5 className={classes.cardProductTitle}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  Fundee 2
+                </a>
+              </h5>
               <p className={classes.cardProductDesciprion}>
                 The place is close to Metro Station and bus stop just 2 min by
                 walk and near to {'"'}Naviglio{'"'} where you can enjoy the
@@ -499,10 +419,10 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$1.119/night</h4>
+                <h4>$11M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
-                <Place /> London, UK
+                <Place /> Orlando, Fl
               </div>
             </CardFooter>
           </Card>
@@ -549,9 +469,14 @@ export default function Dashboard() {
               </div>
               <h4 className={classes.cardProductTitle}>
                 <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Beautiful Castle
+                  Company C
                 </a>
               </h4>
+              <h5 className={classes.cardProductTitle}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  Fundee 3
+                </a>
+              </h5>
               <p className={classes.cardProductDesciprion}>
                 The place is close to Metro Station and bus stop just 2 min by
                 walk and near to {'"'}Naviglio{'"'} where you can enjoy the main
@@ -560,12 +485,100 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$459/night</h4>
+                <h4>$4.2M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
-                <Place /> Milan, Italy
+                <Place /> San Diego, California
               </div>
             </CardFooter>
+          </Card>
+        </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <GridItem xs={12}>
+          <Card>
+            <CardHeader color="success" icon>
+              <CardIcon color="success">
+                <Language />
+              </CardIcon>
+              <h4 className={classes.cardIconTitle}>Top Investors</h4>
+            </CardHeader>
+            <CardBody>
+              <GridContainer justify="space-between">
+                <GridItem xs={12} sm={12} md={5}>
+                  <Table
+                    tableData={[
+                      [
+                        <img src={us_flag} alt="us_flag" key={"flag"} />,
+                        "USA",
+                        "2.920",
+                        "53.23%"
+                      ],
+                      [
+                        <img src={de_flag} alt="us_flag" key={"flag"} />,
+                        "Germany",
+                        "1.300",
+                        "20.43%"
+                      ],
+                      [
+                        <img src={au_flag} alt="us_flag" key={"flag"} />,
+                        "Australia",
+                        "760",
+                        "10.35%"
+                      ],
+                      [
+                        <img src={gb_flag} alt="us_flag" key={"flag"} />,
+                        "United Kingdom",
+                        "690",
+                        "7.87%"
+                      ],
+                      [
+                        <img src={ro_flag} alt="us_flag" key={"flag"} />,
+                        "Romania",
+                        "600",
+                        "5.94%"
+                      ],
+                      [
+                        <img src={br_flag} alt="us_flag" key={"flag"} />,
+                        "Brasil",
+                        "550",
+                        "4.34%"
+                      ]
+                    ]}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={6}>
+                  <VectorMap
+                    map={"world_mill"}
+                    backgroundColor="transparent"
+                    zoomOnScroll={false}
+                    containerStyle={{
+                      width: "100%",
+                      height: "280px"
+                    }}
+                    containerClassName="map"
+                    regionStyle={{
+                      initial: {
+                        fill: "#e4e4e4",
+                        "fill-opacity": 0.9,
+                        stroke: "none",
+                        "stroke-width": 0,
+                        "stroke-opacity": 0
+                      }
+                    }}
+                    series={{
+                      regions: [
+                        {
+                          values: mapData,
+                          scale: ["#AAAAAA", "#444444"],
+                          normalizeFunction: "polynomial"
+                        }
+                      ]
+                    }}
+                  />
+                </GridItem>
+              </GridContainer>
+            </CardBody>
           </Card>
         </GridItem>
       </GridContainer>

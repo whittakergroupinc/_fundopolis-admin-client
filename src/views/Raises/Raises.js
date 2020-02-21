@@ -5,40 +5,31 @@ import ReactTable from "react-table";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import TrendingUp from "@material-ui/icons/TrendingUp";
 import Dvr from "@material-ui/icons/Dvr";
 import Favorite from "@material-ui/icons/Favorite";
 import Close from "@material-ui/icons/Close";
-
-// import Weekend from "@material-ui/icons/Weekend";
-import Home from "@material-ui/icons/Home";
 import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
-import FormatQuote from "@material-ui/icons/FormatQuote";
+
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Table from "components/Table/Table.js";
 import Button from "components/CustomButtons/Button.js";
-import Timeline from "components/Timeline/Timeline.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import Tasks from "components/Tasks/Tasks.js";
 
 import Card from "components/Card/Card.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardText from "components/Card/CardText.js";
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
 
 import { raises } from "data/raises.js";
-import { widgetStories, bugs, website, server } from "variables/general.js";
-
-import image from "assets/img/faces/card-profile1-square.jpg";
+import { bugs, website, server } from "variables/general.js";
 
 import {
   cardTitle,
@@ -100,7 +91,6 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 export default function Raises() {
-
   const [data, setData] = React.useState(
     raises.map((prop, key) => {
       return {
@@ -197,7 +187,9 @@ export default function Raises() {
           <Card>
             <CardHeader color="warning" text>
               <CardText color="warning">
-                <h4 className={classes.cardTitleWhite}>Open Prescreen Approvals</h4>
+                <h4 className={classes.cardTitleWhite}>
+                  Open Prescreen Approvals
+                </h4>
                 <h4 className={classes.cardCategoryWhite}>
                   Oldest open approval on 15th September, 2016
                 </h4>
