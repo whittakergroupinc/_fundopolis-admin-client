@@ -479,7 +479,6 @@ class Sidebar extends React.Component {
           target="_blank"
           className={logoNormal}
         >
-          {logoText}
         </a>
       </div>
     );

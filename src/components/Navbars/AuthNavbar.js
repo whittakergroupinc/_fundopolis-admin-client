@@ -38,91 +38,93 @@ export default function AuthNavbar(props) {
     return window.location.href.indexOf(routeName) > -1 ? true : false;
   };
   const classes = useStyles();
-  const { color, brandText } = props;
+  const { color, brandText, logo } = props;
   const appBarClasses = cx({
     [" " + classes[color]]: color
   });
-  var list = (
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <NavLink to={"/admin/dashboard"} className={classes.navLink}>
-          <Dashboard className={classes.listItemIcon} />
-          <ListItemText
-            primary={"Dashboard"}
-            disableTypography={true}
-            className={classes.listItemText}
-          />
-        </NavLink>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <NavLink
-          to={"/auth/pricing-page"}
-          className={cx(classes.navLink, {
-            [classes.navLinkActive]: activeRoute("/auth/pricing-page")
-          })}
-        >
-          <MonetizationOn className={classes.listItemIcon} />
-          <ListItemText
-            primary={"Pricing"}
-            disableTypography={true}
-            className={classes.listItemText}
-          />
-        </NavLink>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <NavLink
-          to={"/auth/register-page"}
-          className={cx(classes.navLink, {
-            [classes.navLinkActive]: activeRoute("/auth/register-page")
-          })}
-        >
-          <PersonAdd className={classes.listItemIcon} />
-          <ListItemText
-            primary={"Register"}
-            disableTypography={true}
-            className={classes.listItemText}
-          />
-        </NavLink>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <NavLink
-          to={"/auth/login-page"}
-          className={cx(classes.navLink, {
-            [classes.navLinkActive]: activeRoute("/auth/login-page")
-          })}
-        >
-          <Fingerprint className={classes.listItemIcon} />
-          <ListItemText
-            primary={"Login"}
-            disableTypography={true}
-            className={classes.listItemText}
-          />
-        </NavLink>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <NavLink
-          to={"/auth/lock-screen-page"}
-          className={cx(classes.navLink, {
-            [classes.navLinkActive]: activeRoute("/auth/lock-screen-page")
-          })}
-        >
-          <LockOpen className={classes.listItemIcon} />
-          <ListItemText
-            primary={"Lock"}
-            disableTypography={true}
-            className={classes.listItemText}
-          />
-        </NavLink>
-      </ListItem>
-    </List>
-  );
+
+  var list = null
+  // var list = (
+  //   <List className={classes.list}>
+  //     <ListItem className={classes.listItem}>
+  //       <NavLink to={"/admin/dashboard"} className={classes.navLink}>
+  //         <Dashboard className={classes.listItemIcon} />
+  //         <ListItemText
+  //           primary={"Dashboard"}
+  //           disableTypography={true}
+  //           className={classes.listItemText}
+  //         />
+  //       </NavLink>
+  //     </ListItem>
+  //     <ListItem className={classes.listItem}>
+  //       <NavLink
+  //         to={"/auth/pricing-page"}
+  //         className={cx(classes.navLink, {
+  //           [classes.navLinkActive]: activeRoute("/auth/pricing-page")
+  //         })}
+  //       >
+  //         <MonetizationOn className={classes.listItemIcon} />
+  //         <ListItemText
+  //           primary={"Pricing"}
+  //           disableTypography={true}
+  //           className={classes.listItemText}
+  //         />
+  //       </NavLink>
+  //     </ListItem>
+  //     <ListItem className={classes.listItem}>
+  //       <NavLink
+  //         to={"/auth/register-page"}
+  //         className={cx(classes.navLink, {
+  //           [classes.navLinkActive]: activeRoute("/auth/register-page")
+  //         })}
+  //       >
+  //         <PersonAdd className={classes.listItemIcon} />
+  //         <ListItemText
+  //           primary={"Register"}
+  //           disableTypography={true}
+  //           className={classes.listItemText}
+  //         />
+  //       </NavLink>
+  //     </ListItem>
+  //     <ListItem className={classes.listItem}>
+  //       <NavLink
+  //         to={"/auth/login-page"}
+  //         className={cx(classes.navLink, {
+  //           [classes.navLinkActive]: activeRoute("/auth/login-page")
+  //         })}
+  //       >
+  //         <Fingerprint className={classes.listItemIcon} />
+  //         <ListItemText
+  //           primary={"Login"}
+  //           disableTypography={true}
+  //           className={classes.listItemText}
+  //         />
+  //       </NavLink>
+  //     </ListItem>
+  //     <ListItem className={classes.listItem}>
+  //       <NavLink
+  //         to={"/auth/lock-screen-page"}
+  //         className={cx(classes.navLink, {
+  //           [classes.navLinkActive]: activeRoute("/auth/lock-screen-page")
+  //         })}
+  //       >
+  //         <LockOpen className={classes.listItemIcon} />
+  //         <ListItemText
+  //           primary={"Lock"}
+  //           disableTypography={true}
+  //           className={classes.listItemText}
+  //         />
+  //       </NavLink>
+  //     </ListItem>
+  //   </List>
+  // );
   return (
     <AppBar position="static" className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
         <Hidden smDown>
           <div className={classes.flex}>
             <Button href="#" className={classes.title} color="transparent">
-              {brandText}
+              <img src={require("assets/img/logo-fundopolis.svg")} alt="logo" className={classes.img} />
             </Button>
           </div>
         </Hidden>
@@ -170,5 +172,6 @@ export default function AuthNavbar(props) {
 
 AuthNavbar.propTypes = {
   color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
-  brandText: PropTypes.string
+  brandText: PropTypes.string,
+  logo: PropTypes.string
 };

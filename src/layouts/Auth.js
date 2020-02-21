@@ -84,7 +84,8 @@ export default function Pages(props) {
   };
   return (
     <div>
-      <AuthNavbar brandText={getActiveRoute(routes)} {...rest} />
+      <AuthNavbar
+      brandText={getActiveRoute(routes)} {...rest} />
       <div className={classes.wrapper} ref={wrapper}>
         <div
           className={classes.fullPage}
@@ -94,7 +95,6 @@ export default function Pages(props) {
             {getRoutes(routes)}
             <Redirect from="/auth" to="/auth/login-page" />
           </Switch>
-          <Footer white />
         </div>
       </div>
     </div>

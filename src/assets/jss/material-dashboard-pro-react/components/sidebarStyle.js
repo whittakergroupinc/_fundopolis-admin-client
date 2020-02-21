@@ -166,9 +166,11 @@ const sidebarStyle = theme => ({
     transform: "translate3d(25px, 0, 0)"
   },
   img: {
-    width: "35px",
+    // width: "35px",
     verticalAlign: "middle",
-    border: "0"
+    border: "0",
+    position: "relative",
+    top: "-16px",
   },
   background: {
     position: "absolute",

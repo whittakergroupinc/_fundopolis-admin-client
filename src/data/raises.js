@@ -1,5 +1,6 @@
-{
-    "raises": [
+import React from "react";
+
+const raises =  [
         {
             "raiseStatus": "COMPLETE",
             "companyID": "5036a8cc-1c22-4875-befa-be0ca8352f2f",
@@ -4782,4 +4783,5 @@
             }
         }
     ]
-}
+
+export { raises };

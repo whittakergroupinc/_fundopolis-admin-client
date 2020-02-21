@@ -40,8 +40,7 @@
   },
   "pre-commit": [
     "lint:check",
-    "build",
-    "test"
+    "build"
   ],
   "optionalDependencies": {
     "@types/googlemaps": "3.37.3",

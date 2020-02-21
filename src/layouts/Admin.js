@@ -32,7 +32,7 @@ export default function Dashboard(props) {
   const [bgColor, setBgColor] = React.useState("black");
   // const [hasImage, setHasImage] = React.useState(true);
   const [fixedClasses, setFixedClasses] = React.useState("dropdown");
-  const [logo, setLogo] = React.useState(require("assets/img/logo-white.svg"));
+  const [logo, setLogo] = React.useState(require("assets/img/logo-fundopolis.svg"));
   // styles
   const classes = useStyles();
   const mainPanelClasses =
@@ -144,7 +144,7 @@ export default function Dashboard(props) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"Creative Tim"}
+        logoText={"Fundopolis"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}
