@@ -84,7 +84,7 @@ export default function Dashboard() {
                 <TrendingUpIcon />
               </CardIcon>
               <p className={classes.cardCategory}>Total Raised to Date</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
+              <h3 className={classes.cardTitle}>$342.8M</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -353,7 +353,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$23M/raised</h4>
+                <h4>$44.5M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
                 <Place /> Boston, Massachusetts
@@ -419,7 +419,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$11M/raised</h4>
+                <h4>$30.6M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
                 <Place /> Orlando, Fl
@@ -485,7 +485,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter product>
               <div className={classes.price}>
-                <h4>$4.2M/raised</h4>
+                <h4>$22.9M/raised</h4>
               </div>
               <div className={`${classes.stats} ${classes.productStats}`}>
                 <Place /> San Diego, California
