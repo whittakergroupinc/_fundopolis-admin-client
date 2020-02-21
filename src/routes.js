@@ -13,8 +13,9 @@ import DateRange from "@material-ui/icons/DateRange";
 import Image from "@material-ui/icons/Image";
 import TrendingUp from "@material-ui/icons/TrendingUp";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import PieChartIcon from "@material-ui/icons/PieChart";
+import BusinessIcon from "@material-ui/icons/Business";
+
 
 var dashRoutes = [
   {
@@ -37,7 +38,7 @@ var dashRoutes = [
     path: "/fundees",
     name: "Fundees",
     rtlName: "التقويم",
-    icon: SupervisedUserCircleIcon,
+    icon: BusinessIcon,
     component: Calendar,
     layout: "/admin"
   },
