@@ -21,7 +21,6 @@ import Refresh from "@material-ui/icons/Refresh";
 import Edit from "@material-ui/icons/Edit";
 import Place from "@material-ui/icons/Place";
 import ArtTrack from "@material-ui/icons/ArtTrack";
-import Language from "@material-ui/icons/Language";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 
 // core components
@@ -499,7 +498,7 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="success" icon>
               <CardIcon color="success">
-                <Language />
+                <AccountBalanceIcon />
               </CardIcon>
               <h4 className={classes.cardIconTitle}>Top Investors</h4>
             </CardHeader>
