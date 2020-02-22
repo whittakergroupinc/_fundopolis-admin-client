@@ -47,6 +47,7 @@ export default function FixedPlugin(props) {
   return (
     <div
       className={"fixed-plugin" + (props.rtlActive ? " fixed-plugin-rtl" : "")}
+      style={{display: "none"}}
     >
       <div id="fixedPluginClasses" className={props.fixedClasses}>
         <div onClick={handleClick}>

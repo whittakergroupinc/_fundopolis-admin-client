@@ -79,7 +79,8 @@ var dashRoutes = [
         mini: "A0",
         rtlMini: "ع",
         component: PricingPage,
-        layout: "/auth"
+        layout: "/auth",
+        url: "fundopolis.com"
       },
       {
         path: "/rtl-support-page",
@@ -88,7 +89,8 @@ var dashRoutes = [
         mini: "SF",
         rtlMini: "صو",
         component: RTLSupport,
-        layout: "/rtl"
+        layout: "/rtl",
+        url: "fundopolis.com"
       },
       {
         path: "/timeline-page",
@@ -97,7 +99,8 @@ var dashRoutes = [
         mini: "T",
         rtlMini: "تي",
         component: TimelinePage,
-        layout: "/admin"
+        layout: "/admin",
+        url: "fundopolis.com"
       },
       {
         path: "/login-page",
@@ -106,7 +109,38 @@ var dashRoutes = [
         mini: "L",
         rtlMini: "هعذا",
         component: LoginPage,
-        layout: "/auth"
+        layout: "/auth",
+        url: "fundopolis.com"
+      },
+      {
+        path: "/login-page",
+        name: "Jenkins",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "L",
+        rtlMini: "هعذا",
+        component: LoginPage,
+        layout: "/auth",
+        url: "jenkins.fundopolis.com"
+      },
+      {
+        path: "/login-page",
+        name: "Grafana",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "GF",
+        rtlMini: "هعذا",
+        component: LoginPage,
+        layout: "/auth",
+        url: "grafana.fundopolis.com"
+      },
+      {
+        path: "/login-page",
+        name: "Gery Logs",
+        rtlName: "هعذاتسجيل الدخول",
+        mini: "GL",
+        rtlMini: "هعذا",
+        component: LoginPage,
+        layout: "/auth",
+        url: "greylogs.fundopolis.com"
       }
     ]
   }

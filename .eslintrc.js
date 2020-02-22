@@ -1,9 +1,15 @@
 module.exports = {
+  settings: {
+    react: {
+      version: require("./package.json").dependencies.react
+    }
+  },
   parser: "babel-eslint",
   env: {
     es6: true,
     node: true,
-    browser: true
+    browser: true,
+    jest: true
   },
   parserOptions: {
     ecmaVersion: 6,

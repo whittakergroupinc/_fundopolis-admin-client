@@ -90,6 +90,15 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
+const openPrescreenRaiseList = raises
+  .filter(raise => raise.raiseStatus === "PRE")
+  .sort((a, b) => b.createdAt - a.createdAt)
+  .map(raise => [raise.company.name, raise.raiseStatus, raise.createdAt]);
+
+const oldestPrescreenRaise = openPrescreenRaiseList.sort(
+  (a, b) => b.createdAt - a.createdAt
+)[0];
+
 export default function Raises() {
   const [data, setData] = React.useState(
     raises.map((prop, key) => {
@@ -188,10 +197,10 @@ export default function Raises() {
             <CardHeader color="warning" text>
               <CardText color="warning">
                 <h4 className={classes.cardTitleWhite}>
-                  Open Prescreen Approvals
+                  Open Pre-Screen Approvals
                 </h4>
                 <h4 className={classes.cardCategoryWhite}>
-                  Oldest open approval on 15th September, 2016
+                  Oldest open approval on {oldestPrescreenRaise[2]}
                 </h4>
               </CardText>
             </CardHeader>
@@ -199,13 +208,8 @@ export default function Raises() {
               <Table
                 hover
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Salary", "Country"]}
-                tableData={[
-                  ["1", "Dakota Rice", "$36,738", "Niger"],
-                  ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                  ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                  ["4", "Philip Chaney", "$38,735", "Korea, South"]
-                ]}
+                tableHead={["Name", "Status", "Date"]}
+                tableData={openPrescreenRaiseList}
               />
             </CardBody>
           </Card>

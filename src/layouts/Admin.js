@@ -79,7 +79,7 @@ export default function Dashboard(props) {
         setLogo(require("assets/img/logo.svg"));
         break;
       default:
-        setLogo(require("assets/img/logo-white.svg"));
+        setLogo(require("assets/img/logo-fundopolis-white.svg"));
         break;
     }
     setBgColor(bgColor);

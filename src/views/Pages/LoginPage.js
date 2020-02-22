@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth0 } from "../../utils/react-auth0-spa";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -23,11 +24,17 @@ import styles from "assets/jss/material-dashboard-pro-react/views/loginPageStyle
 const useStyles = makeStyles(styles);
 
 export default function LoginPage() {
+  // const [userData, setUserData] = React.useState({ email: '', password: '' });
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
+  // const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
+  const login = () => {
+    loginWithRedirect();
+  };
   return (
     <div className={classes.container}>
       <GridContainer justify="center">
@@ -75,9 +82,23 @@ export default function LoginPage() {
                 />
               </CardBody>
               <CardFooter className={classes.justifyContentCenter}>
-                <Button color="rose" simple size="lg" block>
+                <Button
+                  onClick={() => login({})}
+                  color="rose"
+                  simple
+                  size="lg"
+                  block
+                >
                   Let{"'"}s Go
                 </Button>
+
+                {/* <div>
+                  {!isAuthenticated && (
+                    <button onClick={() => loginWithRedirect({})}>Log in</button>
+                  )}
+
+                  {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+                </div> */}
               </CardFooter>
             </Card>
           </form>

@@ -33,7 +33,9 @@ export default function RTL(props) {
   const [bgColor, setBgColor] = React.useState("black");
   // const [hasImage, setHasImage] = React.useState(true);
   const [fixedClasses, setFixedClasses] = React.useState("dropdown");
-  const [logo, setLogo] = React.useState(require("assets/img/logo-white.svg"));
+  const [logo, setLogo] = React.useState(
+    require("assets/img/logo-fundopolis-white.svg")
+  );
   // styles
   const classes = useStyles();
   const mainPanelClasses =
@@ -76,7 +78,7 @@ export default function RTL(props) {
         setLogo(require("assets/img/logo.svg"));
         break;
       default:
-        setLogo(require("assets/img/logo-white.svg"));
+        setLogo(require("assets/img/logo-fundopolis-white.svg"));
         break;
     }
     setBgColor(bgColor);
